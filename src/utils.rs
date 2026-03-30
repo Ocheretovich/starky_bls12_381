@@ -23,7 +23,7 @@ pub fn assign_cols_from_prev<F: RichField + Extendable<D>,
     const C: usize,
 >(trace: &mut Vec<[F; C]>, row: usize, start_col: usize, num_cols: usize) {
     assert!(row >= 1);
-    for i in start_col..start_col + num_cols {
+    for i in 0..num_cols {
         trace[row][start_col + i] = trace[row - 1][start_col + i];
     }
 }
